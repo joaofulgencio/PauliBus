@@ -5,7 +5,7 @@ const port = process.env.PORT || 4000;
 const Linhas = require('./linhas/linhaModel');
 const app = express();
 
-mongoose.connect('mongodb://localhost:27017/pauliBus');
+mongoose.connect('mongodb://admin:admin@ds135757.mlab.com:35757/paulibus');
 
 app.use(bodyParser.json());
 app.use(require('./linhas/linhaRoute'));
