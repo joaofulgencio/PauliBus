@@ -11,7 +11,7 @@ exports.cadastro = function(req, res) {
 };
 
 exports.linhas = function(req, res) {
-    Linha.find({}, function(err, linhas) {
+    Linha.find({}, "-_id -__v -Horarios._id", function(err, linhas) {
         if(err) res.json({message: 'Erro', error, err}).status(404);
         if(!linhas.length) res.json({message:'Nenhuma linha cadastrada!', result:[]}).status(200);
         else 
