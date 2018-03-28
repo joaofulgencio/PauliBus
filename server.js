@@ -8,7 +8,10 @@ const app = express();
 mongoose.connect('mongodb://admin:admin@ds135757.mlab.com:35757/paulibus');
 //mongoose.connect('mongodb://localhost:27017/paulibus');
 
-
+app.use(function (req, res, next) {
+   res.setHeader('Access-Control-Allow-Origin', '*');
+   next();
+});
 app.use(bodyParser.json());
 app.use(require('./linhas/linhaRoute'));
 
